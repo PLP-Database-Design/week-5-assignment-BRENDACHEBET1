@@ -1,0 +1,30 @@
+
+<body>
+    <h1>Filtered Providers by Specialty</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Provider Specialty</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% if (results.length === 0) { %>
+                <tr>
+                    <td colspan="3">No providers found.</td>
+                </tr>
+            <% } else { %>
+                <% results.forEach(provider => { %>
+                    <tr>
+                        <td><%= provider.first_name %></td>
+                        <td><%= provider.last_name %></td>
+                        <td><%= provider.provider_specialty %></td>
+                    </tr>
+                <% }); %>
+            <% } %>
+        </tbody>
+    </table>
+</body>
+
+

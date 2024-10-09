@@ -1,0 +1,32 @@
+
+</head>
+<body>
+    <h1>Filtered Patients by First Name</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Patient ID</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Date of Birth</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% if (results.length === 0) { %>
+                <tr>
+                    <td colspan="4">No patients found.</td>
+                </tr>
+            <% } else { %>
+                <% results.forEach(patient => { %>
+                    <tr>
+                        <td><%= patient.patient_id %></td>
+                        <td><%= patient.first_name %></td>
+                        <td><%= patient.last_name %></td>
+                        <td><%= patient.date_of_birth %></td>
+                    </tr>
+                <% }); %>
+            <% } %>
+        </tbody>
+    </table>
+</body>
+
